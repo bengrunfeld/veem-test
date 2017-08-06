@@ -2,14 +2,22 @@
 // and returns a new color (String). 
 
 const getNewColor = () => {
-    return '#' + Math.floor(Math.random()*16777215).toString(16)
-  }
+  const t1 = performance.now()
+
+  // ~~ is a little faster than Math.floor
+  const rand = ~~(Math.random()*16777215)
+  const newColor = '#' + rand.toString(16)
+  
+  const t2 = performance.now()
+  console.log('Runtime: ', t2 - t1)
+  
+  return newColor
+}
 
 const changeColor = (usedColors) => {
   const newColor = getNewColor()
 
   if (usedColors.includes(newColor)) {
-    // Beware stack overflows here...
     changeColor(usedColors)
     return
   }
