@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import changeColor from './change-color'
+import changeColor from 'gen-random-color'
 import './App.css'
 
 
