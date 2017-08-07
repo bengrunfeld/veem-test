@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    let { color } = this.state
+    const { color } = this.state
 
     return (
       <div className="App" style={{
